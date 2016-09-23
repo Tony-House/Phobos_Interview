@@ -34,8 +34,8 @@ for (( i = 1; i <= $1; i++ )); do
             RAND_ARG=$(( $RANDOM % 10 + 1))
             ;;
         esac
-        TMP_CMD=${METHODS[$RAND_METHOD]}$RAND_ARG' >> '$3$i'.txt 2>&1'
-        RES_CMD=$RES_CMD"echo -e '\r\n\$ "$TMP_CMD"\r\n' >> '$3$i'.txt; "$TMP_CMD"; "
+        TMP_CMD=${METHODS[$RAND_METHOD]}$RAND_ARG' >> '$3$i'.log 2>&1'
+        RES_CMD=$RES_CMD"echo -e '\r\n\$ "$TMP_CMD"\r\n' >> '$3$i'.log; "$TMP_CMD"; "
     done
     RES_CMD=$RES_CMD') & '
 done
